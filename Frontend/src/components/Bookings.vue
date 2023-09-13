@@ -71,15 +71,15 @@
           <div v-if="slotProps.data.specialOfferId > 0">
             {{
               countTotalPrice(
-                services.at(slotProps.data.serviceId - 1)?.price,
-                specialOffers.at(slotProps.data.specialOfferId - 1)?.percentage,
+                services.at(slotProps.data.serviceId - 1)?.price!,
+                specialOffers.at(slotProps.data.specialOfferId - 1)?.percentage!,
               )
             }}€
           </div>
           <div v-else>
             {{
               countTotalPrice(
-                services.at(slotProps.data.serviceId - 1)?.price,
+                services.at(slotProps.data.serviceId - 1)?.price!,
                 0,
               )
             }}€
@@ -315,7 +315,9 @@ export default defineComponent({
 
     const booking: Ref<Booking> = ref({
       id: 0,
+      hairdresserId: 0,
       serviceId: 0,
+      specialOfferId: 0,
       date: '',
       time: '',
     });
@@ -386,7 +388,7 @@ export default defineComponent({
       this.booking = { ...editBooking };
       this.editDialog = true;
     },
-    countTotalPrice(price, percentage) {
+    countTotalPrice(price: number, percentage: number) {
       var totalPrice = price - price * percentage * 0.01;
       return totalPrice;
     },

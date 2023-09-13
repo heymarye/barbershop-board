@@ -222,6 +222,7 @@ export default defineComponent({
     const service: Ref<Service> = ref({
       id: 0,
       title: '',
+      description: '',
       price: 0,
       duration: '',
     });
