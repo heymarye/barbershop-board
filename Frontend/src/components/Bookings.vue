@@ -134,19 +134,6 @@
       </select>
     </div>
     <div class="field">
-      <label for="specialOffer">Discount</label>
-      <br />
-      <select
-        v-model="booking.specialOfferId"
-        style="border: 0.5px solid; height: 40px; margin-bottom: 10px"
-      >
-        <option :value="null">-</option>
-        <option v-for="option in specialOffers" :value="option.id">
-          {{ option.code }} ({{ specialOffers.at(option.id - 1)?.percentage }}%)
-        </option>
-      </select>
-    </div>
-    <div class="field">
       <label for="date">Date</label>
       <input
         id="date"
@@ -154,8 +141,6 @@
         type="date"
         style="border: 0.5px solid; height: 40px; margin-bottom: 10px"
         v-model="booking.date"
-        required
-        placeholder=""
       />
     </div>
     <div class="field">
@@ -166,9 +151,20 @@
         type="time"
         style="border: 0.5px solid; height: 40px; margin-bottom: 10px"
         v-model="booking.time"
-        required
-        placeholder=""
       />
+    </div>
+    <div class="field" v-if="booking.serviceId != 0 && specialOffers.filter((offer) => offer.serviceId === booking.serviceId && offer.fromDate <= booking.date && offer.toDate >= booking.date).length != 0">
+      <label for="specialOffer">Discount</label>
+      <br />
+      <select
+        v-model="booking.specialOfferId"
+        style="border: 0.5px solid; height: 40px; margin-bottom: 10px"
+      >
+      <option :value="null">-</option>
+        <option v-for="option in specialOffers.filter((offer) => offer.serviceId === booking.serviceId && offer.fromDate <= booking.date && offer.toDate >= booking.date)" :value="option.id">
+          {{ option.code }} ({{ specialOffers.at(option.id - 1)?.percentage }}%)
+        </option>
+      </select>
     </div>
     <template #footer>
       <Button
@@ -213,19 +209,6 @@
       </select>
     </div>
     <div class="field">
-      <label for="specialOffer">Discount</label>
-      <br />
-      <select
-        v-model="booking.specialOfferId"
-        style="border: 0.5px solid; height: 40px; margin-bottom: 10px"
-      >
-        <option :value="null">-</option>
-        <option v-for="option in specialOffers" :value="option.id">
-          {{ option.code }} ({{ specialOffers.at(option.id - 1)?.percentage }}%)
-        </option>
-      </select>
-    </div>
-    <div class="field">
       <label for="date">Date</label>
       <input
         id="date"
@@ -233,8 +216,6 @@
         type="date"
         style="border: 0.5px solid; height: 40px; margin-bottom: 10px"
         v-model="booking.date"
-        required
-        placeholder=""
       />
     </div>
     <div class="field">
@@ -245,9 +226,20 @@
         type="time"
         style="border: 0.5px solid; height: 40px; margin-bottom: 10px"
         v-model="booking.time"
-        required
-        placeholder=""
       />
+    </div>
+    <div class="field" v-if="booking.serviceId != 0 && specialOffers.filter((offer) => offer.serviceId === booking.serviceId && offer.fromDate <= booking.date && offer.toDate >= booking.date).length != 0">
+      <label for="specialOffer">Discount</label>
+      <br />
+      <select
+        v-model="booking.specialOfferId"
+        style="border: 0.5px solid; height: 40px; margin-bottom: 10px"
+      >
+      <option :value="null">-</option>
+        <option v-for="option in specialOffers.filter((offer) => offer.serviceId === booking.serviceId && offer.fromDate <= booking.date && offer.toDate >= booking.date)" :value="option.id">
+          {{ option.code }} ({{ specialOffers.at(option.id - 1)?.percentage }}%)
+        </option>
+      </select>
     </div>
     <template #footer>
       <Button

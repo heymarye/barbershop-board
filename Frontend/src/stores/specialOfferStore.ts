@@ -41,7 +41,6 @@ export const useSpecialOfferStore = defineStore('specialOfferStore', () => {
 
     if (apiAddSpecialOffer.response.value) {
       allSpecialOffers.push(apiAddSpecialOffer.response.value!);
-      router.go(0);
       specialOffers.value = allSpecialOffers;
     }
   };

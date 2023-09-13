@@ -71,8 +71,6 @@
         type="number"
         style="border: 0.5px solid; height: 40px; margin-bottom: 10px"
         v-model="specialOffer.percentage"
-        required
-        placeholder=""
       />
     </div>
     <div class="field">
@@ -95,8 +93,6 @@
         type="date"
         style="border: 0.5px solid; height: 40px; margin-bottom: 10px"
         v-model="specialOffer.fromDate"
-        required
-        placeholder=""
       />
     </div>
     <div class="field">
@@ -107,8 +103,6 @@
         type="date"
         style="border: 0.5px solid; height: 40px; margin-bottom: 10px"
         v-model="specialOffer.toDate"
-        required
-        placeholder=""
       />
     </div>
     <template #footer>
@@ -137,8 +131,6 @@
         type="number"
         style="border: 0.5px solid; height: 40px; margin-bottom: 10px"
         v-model="specialOffer.percentage"
-        required
-        placeholder=""
       />
     </div>
     <div class="field">
@@ -161,8 +153,6 @@
         type="date"
         style="border: 0.5px solid; height: 40px; margin-bottom: 10px"
         v-model="specialOffer.fromDate"
-        required
-        placeholder=""
       />
     </div>
     <div class="field">
@@ -173,8 +163,6 @@
         type="date"
         style="border: 0.5px solid; height: 40px; margin-bottom: 10px"
         v-model="specialOffer.toDate"
-        required
-        placeholder=""
       />
     </div>
     <template #footer>

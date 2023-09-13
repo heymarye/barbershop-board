@@ -54,8 +54,6 @@
         type="text"
         style="border: 0.5px solid; height: 40px; margin-bottom: 10px"
         v-model="hairdresser.firstName"
-        required
-        placeholder=""
       />
     </div>
     <div class="field">
@@ -66,8 +64,6 @@
         type="text"
         style="border: 0.5px solid; height: 40px; margin-bottom: 10px"
         v-model="hairdresser.lastName"
-        required
-        placeholder=""
       />
     </div>
     <div class="field">
@@ -78,8 +74,6 @@
         type="mail"
         style="border: 0.5px solid; height: 40px; margin-bottom: 10px"
         v-model="hairdresser.mail"
-        required
-        placeholder=""
       />
     </div>
     <div class="field">
@@ -90,8 +84,6 @@
         type="string"
         style="border: 0.5px solid; height: 40px; margin-bottom: 10px"
         v-model="hairdresser.mobile"
-        required
-        placeholder=""
       />
     </div>
     <template #footer>
@@ -120,8 +112,6 @@
         type="text"
         style="border: 0.5px solid; height: 40px; margin-bottom: 10px"
         v-model="hairdresser.firstName"
-        required
-        placeholder=""
       />
     </div>
     <div class="field">
@@ -132,8 +122,6 @@
         type="text"
         style="border: 0.5px solid; height: 40px; margin-bottom: 10px"
         v-model="hairdresser.lastName"
-        required
-        placeholder=""
       />
     </div>
     <div class="field">
@@ -144,8 +132,6 @@
         type="email"
         style="border: 0.5px solid; height: 40px; margin-bottom: 10px"
         v-model="hairdresser.mail"
-        required
-        placeholder=""
       />
     </div>
     <div class="field">
@@ -156,8 +142,6 @@
         type="string"
         style="border: 0.5px solid; height: 40px; margin-bottom: 10px"
         v-model="hairdresser.mobile"
-        required
-        placeholder=""
       />
     </div>
     <template #footer>
@@ -226,12 +210,10 @@ export default defineComponent({
     const { hairdressers } = storeToRefs(hairdressersStore);
 
     onMounted(() => {
-      //hairdressers.value = hairdressersStore.hairdressers;
       hairdressersStore.load();
     });
 
     function createHairdresser() {
-      //hairdressersStore.createHairdresser(hairdresser.value);
       hairdressersStore.createHairdresser({ ...hairdresser.value });
       hairdresser.value.firstName = '';
       hairdresser.value.lastName = '';

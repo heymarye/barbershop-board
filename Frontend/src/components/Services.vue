@@ -58,8 +58,6 @@
         type="text"
         style="border: 0.5px solid; height: 40px; margin-bottom: 10px"
         v-model="service.title"
-        required
-        placeholder=""
       />
     </div>
     <div class="field">
@@ -70,8 +68,6 @@
         type="text"
         style="border: 0.5px solid; height: 40px; margin-bottom: 10px"
         v-model="service.description"
-        required
-        placeholder=""
       />
     </div>
     <div class="field">
@@ -82,8 +78,6 @@
         type="number"
         style="border: 0.5px solid; height: 40px; margin-bottom: 10px"
         v-model="service.price"
-        required
-        placeholder=""
       />
     </div>
     <div class="field">
@@ -94,8 +88,6 @@
         type="time"
         style="border: 0.5px solid; height: 40px; margin-bottom: 10px"
         v-model="service.duration"
-        required
-        placeholder=""
       />
     </div>
     <template #footer>
@@ -124,8 +116,6 @@
         type="text"
         style="border: 0.5px solid; height: 40px; margin-bottom: 10px"
         v-model="service.title"
-        required
-        placeholder=""
       />
     </div>
     <div class="field">
@@ -136,8 +126,6 @@
         type="text"
         style="border: 0.5px solid; height: 40px; margin-bottom: 10px"
         v-model="service.description"
-        required
-        placeholder=""
       />
     </div>
     <div class="field">
@@ -148,8 +136,6 @@
         type="number"
         style="border: 0.5px solid; height: 40px; margin-bottom: 10px"
         v-model="service.price"
-        required
-        placeholder=""
       />
     </div>
     <div class="field">
@@ -160,8 +146,6 @@
         type="time"
         style="border: 0.5px solid; height: 40px; margin-bottom: 10px"
         v-model="service.duration"
-        required
-        placeholder=""
       />
     </div>
     <template #footer>
